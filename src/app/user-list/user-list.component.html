@@ -1,0 +1,8 @@
+<mat-selection-list #userList [multiple]="false" (selectionChange)="onUserSelect($event)">
+  <mat-list-option
+    *ngFor="let user of users"
+    [value]="user.id"
+  >
+    {{ user.name }}
+  </mat-list-option>
+</mat-selection-list>

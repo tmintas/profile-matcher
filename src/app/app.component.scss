@@ -1,0 +1,53 @@
+@import './mixins.scss';
+
+:host {
+  padding: 40px;
+  display: flex;
+  justify-content: space-evenly;
+
+  .user-selection-container, .main-container {
+    padding: 15px;
+    border: 1px solid rgb(212, 212, 212);
+    border-radius: 10px;
+    background-color: lighten(aliceblue, 2);
+  }
+
+  .user-selection-container {
+    flex: 40% 0 0;
+  }
+
+  .main-container {
+    flex: 20% 0 0;
+    display: flex;
+    flex-direction: column;
+
+    .user-profile {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        flex-basis: 30px;
+      }
+
+      .no-users, .picture-container {
+        @include centered-content();
+
+        flex-grow: 1;
+      }
+
+      .picture-container {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 66%;
+      }
+    }
+
+    .actions {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
